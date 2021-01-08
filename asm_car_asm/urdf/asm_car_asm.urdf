@@ -1,0 +1,1098 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com)
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="asm_car_asm">
+<link name="base_footprint">
+        <visual>
+            <geometry>
+                    <box size="0.001 0.001 0.001"/>
+                </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+        </visual>
+    </link>
+    <joint name="base_footprint_joint" type="fixed">
+        <origin xyz="0 0 0" />
+        <parent link="base_footprint" />
+        <child link="base_link" />
+    </joint>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-5.24598391440494E-16 -1.43306869412503E-15 -0.111330753346375"
+        rpy="0 0 0" />
+      <mass
+        value="30.826691190957243" />
+      <inertia
+        ixx="0.0249975874157002"
+        ixy="-1.06977614260258E-16"
+        ixz="3.12123339533634E-17"
+        iyy="0.0768556941113597"
+        iyz="5.77126737216036E-17"
+        izz="0.0969436158700248" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.313725490196078 0.313725490196078 0.313725490196078 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="body">
+    <inertial>
+      <origin
+        xyz="0.00748877624058426 -6.82341218785787E-16 0.126875504146603"
+        rpy="0 0 0" />
+      <mass
+        value="10.00302107294552" />
+      <inertia
+        ixx="0.0353961113249432"
+        ixy="-7.93716068820272E-17"
+        ixz="-0.000522977464601764"
+        iyy="0.110631619010978"
+        iyz="-2.98279716339166E-17"
+        izz="0.134718731941544" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/body.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.313725490196078 0.313725490196078 0.313725490196078 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/body.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="body_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="body" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="rack_link">
+    <inertial>
+      <origin
+        xyz="-1.79969606798042E-11 0.140184473428739 0.1757564007541"
+        rpy="0 0 0" />
+      <mass
+        value="1.56017677903339" />
+      <inertia
+        ixx="0.170168272052352"
+        ixy="-2.67547147842817E-12"
+        ixz="-5.81828699977915E-12"
+        iyy="0.147109365957286"
+        iyz="0.00776074128079464"
+        izz="0.0522121702201837" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/rack_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/rack_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rack_joint"
+    type="fixed">
+    <origin
+      xyz="0.502 0 0.226"
+      rpy="0 0 1.5708" />
+    <parent
+      link="body" />
+    <child
+      link="rack_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="arm_base_link">
+    <inertial>
+      <origin
+        xyz="-5.55111512312578E-17 0.101176973562987 -2.46321547148081E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.745925360702044" />
+      <inertia
+        ixx="0.00644788228655189"
+        ixy="-2.00161742688882E-18"
+        ixz="2.38422264352436E-30"
+        iyy="0.00345230985013849"
+        iyz="7.44332857983967E-19"
+        izz="0.00644788228655189" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/arm_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.584313725490196 0.584313725490196 0.584313725490196 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/arm_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ArmJoint"
+    type="fixed">
+    <origin
+      xyz="-0.388 0 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="body" />
+    <child
+      link="arm_base_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <joint name="ur5_joint" type="fixed">
+    <parent link="arm_base_link" />
+    <child link = "ur5_base_link" />
+    <origin xyz="0.0 0.2 0.0" rpy="-1.5708 0.0 0.0" />
+  </joint>
+  <link
+    name="laser_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.1" />
+      <inertia
+        ixx="0.00265370284480665"
+        ixy="-1.82350288041465E-19"
+        ixz="-0.00144065197407825"
+        iyy="0.0257376544776968"
+        iyz="-9.25715958430322E-21"
+        izz="0.0257584221294946" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.001 0.001 0.001"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.149019607843137 0.517647058823529 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="laser_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.653"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="rack_link" />
+    <child
+      link="laser_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+<link
+    name="kinect_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.1" />
+      <inertia
+        ixx="0.00265370284480665"
+        ixy="-1.82350288041465E-19"
+        ixz="-0.00144065197407825"
+        iyy="0.0257376544776968"
+        iyz="-9.25715958430322E-21"
+        izz="0.0257584221294946" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/kinect_v2.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.149019607843137 0.517647058823529 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/kinect_v2.stl" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="kinect_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.603"
+      rpy="0 0.7 -1.5708" />
+    <parent
+      link="rack_link" />
+    <child
+      link="kinect_link" />
+    <axis
+      xyz="0 1 0" />
+      <dynamics damping="0.7"/>
+  </joint>
+
+  <link
+    name="FrontLeftLink">
+    <inertial>
+      <origin
+        xyz="-0.016262 0 -0.020824"
+        rpy="0 0 0" />
+      <mass
+        value="1.7922" />
+      <inertia
+        ixx="0.0026537"
+        ixy="-2.459E-19"
+        ixz="-0.0014407"
+        iyy="0.025738"
+        iyz="-1.1161E-19"
+        izz="0.025758" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/FrontLeftLink.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.14902 0.51765 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/FrontLeftLink.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FrontLeftJoint"
+    type="continuous">
+    <origin
+      xyz="0.288 0.245 -0.066"
+      rpy="-1.5708 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="FrontLeftLink" />
+    <axis
+      xyz="0 0 -1" />
+
+    <dynamics
+      damping="0.7" friction="4"
+       />
+    <!--limit
+      lower="0"
+      upper="1"
+      effort="10"
+      velocity="5" />
+    <dynamics
+      damping="0.7"
+      friction="0.1" />
+    <safety_controller
+      soft_upper="0.9"
+      soft_lower="0.1"
+      k_position="0.8"
+      k_velocity="10" /-->
+  </joint>
+  <link
+    name="FrontLeftWheel1">
+    <inertial>
+      <origin
+        xyz="1.81663042386759E-08 4.16008477666097E-11 -5.16786613502518E-12"
+        rpy="0 0 0" />
+      <mass
+        value="2.99405359774556" />
+      <inertia
+        ixx="0.125658758012625"
+        ixy="-2.01511313536205E-10"
+        ixz="1.25305142947541E-11"
+        iyy="0.0635377250884111"
+        iyz="2.93950369735996E-10"
+        izz="0.0635377250888026" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/FrontLeftWheel1.STL" />
+	<!--cylinder length="0.055" radius="0.2325" /-->
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.5708 0" />
+      <geometry>
+        <!--mesh
+          filename="package://asm_car_asm/meshes/FrontLeftWheel1.STL" /-->
+	    <cylinder length="0.055" radius="0.2325" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FrontLeftJoint1"
+    type="continuous">
+    <origin
+      xyz="-0.144 0 -0.1305"
+      rpy="3.1416 1.5708 0" />
+    <parent
+      link="FrontLeftLink" />
+    <child
+      link="FrontLeftWheel1" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="FrontLeftWheel2">
+    <inertial>
+      <origin
+        xyz="1.81663042386759E-08 4.16010143000634E-11 -5.16767184599587E-12"
+        rpy="0 0 0" />
+      <mass
+        value="2.99405359774556" />
+      <inertia
+        ixx="0.125658758012625"
+        ixy="-2.01511310507187E-10"
+        ixz="1.25305206699122E-11"
+        iyy="0.0635377250884112"
+        iyz="2.93950366303196E-10"
+        izz="0.0635377250888023" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/FrontLeftWheel2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/FrontLeftWheel2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FrontLeftJoint2"
+    type="continuous">
+    <origin
+      xyz="0.144 0 -0.0695"
+      rpy="3.1416 1.5708 0" />
+    <parent
+      link="FrontLeftLink" />
+    <child
+      link="FrontLeftWheel2" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="FrontRightLink">
+    <inertial>
+      <origin
+        xyz="-0.016262 0 -0.020824"
+        rpy="0 0 0" />
+      <mass
+        value="1.7922" />
+      <inertia
+        ixx="0.0026537"
+        ixy="-4.1632E-19"
+        ixz="-0.0014407"
+        iyy="0.025738"
+        iyz="3.073E-19"
+        izz="0.025758" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/FrontRightLink.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.14902 0.51765 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/FrontRightLink.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FrontRightJoint"
+    type="continuous">
+    <origin
+      xyz="0.288 -0.245 -0.066"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="FrontRightLink" />
+    <axis
+      xyz="0 0 1" />
+    <dynamics
+      damping="0.7" friction="4"
+       />
+    <!--limit
+      lower="0"
+      upper="1"
+      effort="10"
+      velocity="5" />
+    <dynamics
+      damping="0.7"
+      friction="0.1" />
+    <safety_controller
+      soft_upper="0.9"
+      soft_lower="0.1"
+      k_position="0.8"
+      k_velocity="10" /-->
+  </joint>
+  <link
+    name="FrontRightWheel1">
+    <inertial>
+      <origin
+        xyz="1.81663042386759E-08 -4.16008616443975E-11 5.16786613502518E-12"
+        rpy="0 0 0" />
+      <mass
+        value="2.99405359774556" />
+      <inertia
+        ixx="0.125658758012625"
+        ixy="2.01511299482443E-10"
+        ixz="-1.25305170736421E-11"
+        iyy="0.0635377250884111"
+        iyz="2.93950405773773E-10"
+        izz="0.0635377250888023" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/FrontRightWheel1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/FrontRightWheel1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FrontRightJoint1"
+    type="continuous">
+    <origin
+      xyz="-0.144 0 -0.1305"
+      rpy="0 1.5708 0" />
+    <parent
+      link="FrontRightLink" />
+    <child
+      link="FrontRightWheel1" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="FrontRightWheel2">
+    <inertial>
+      <origin
+        xyz="1.81663042941871E-08 -4.16010004222755E-11 5.16781062387395E-12"
+        rpy="0 0 0" />
+      <mass
+        value="2.99405359774555" />
+      <inertia
+        ixx="0.125658758012625"
+        ixy="2.0151130592133E-10"
+        ixz="-1.25305182936337E-11"
+        iyy="0.063537725088411"
+        iyz="2.93950405151734E-10"
+        izz="0.0635377250888022" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/FrontRightWheel2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/FrontRightWheel2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FrontRightJoint2"
+    type="continuous">
+    <origin
+      xyz="0.144 0 -0.0695"
+      rpy="0 1.5708 0" />
+    <parent
+      link="FrontRightLink" />
+    <child
+      link="FrontRightWheel2" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="BackRightLink">
+    <inertial>
+      <origin
+        xyz="-0.016262 0 -0.020824"
+        rpy="0 0 0" />
+      <mass
+        value="1.7922" />
+      <inertia
+        ixx="0.0026537"
+        ixy="-5.6011E-19"
+        ixz="-0.0014407"
+        iyy="0.025738"
+        iyz="-1.0292E-20"
+        izz="0.025758" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/BackRightLink.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.14902 0.51765 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/BackRightLink.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BackRightJoint"
+    type="continuous">
+    <origin
+      xyz="-0.288 -0.245 -0.066"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="BackRightLink" />
+    <axis
+      xyz="0 0 1" />
+    <dynamics
+      damping="0.7" friction="4"
+       />
+    <!--limit
+      lower="0"
+      upper="1"
+      effort="10"
+      velocity="5" />
+    <dynamics
+      damping="0.7"
+      friction="0.1" />
+    <safety_controller
+      soft_upper="0.9"
+      soft_lower="0.1"
+      k_position="0.8"
+      k_velocity="10" /-->
+  </joint>
+  <link
+    name="BackRightWheel1">
+    <inertial>
+      <origin
+        xyz="1.81663042386759E-08 -4.16009726666999E-11 5.16769960157148E-12"
+        rpy="0 0 0" />
+      <mass
+        value="2.99405359774556" />
+      <inertia
+        ixx="0.125658758012625"
+        ixy="2.01511300978077E-10"
+        ixz="-1.25305180554505E-11"
+        iyy="0.0635377250884111"
+        iyz="2.93950427015772E-10"
+        izz="0.0635377250888023" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/BackRightWheel1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/BackRightWheel1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BackRightJoint1"
+    type="continuous">
+    <origin
+      xyz="0.144 0 -0.0695"
+      rpy="0 1.5708 0" />
+    <parent
+      link="BackRightLink" />
+    <child
+      link="BackRightWheel1" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="BackRightWheel2">
+    <inertial>
+      <origin
+        xyz="1.81663042386759E-08 -4.16009449111243E-11 5.16756082369341E-12"
+        rpy="0 0 0" />
+      <mass
+        value="2.99405359774556" />
+      <inertia
+        ixx="0.125658758012625"
+        ixy="2.01511303900476E-10"
+        ixz="-1.25305218098853E-11"
+        iyy="0.0635377250884113"
+        iyz="2.93950347091926E-10"
+        izz="0.0635377250888024" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/BackRightWheel2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/BackRightWheel2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BackRightJoint2"
+    type="continuous">
+    <origin
+      xyz="-0.144 0 -0.1305"
+      rpy="0 1.5708 0" />
+    <parent
+      link="BackRightLink" />
+    <child
+      link="BackRightWheel2" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="BackLeftLink">
+    <inertial>
+      <origin
+        xyz="-5.246E-16 -1.4331E-15 -0.11133"
+        rpy="0 0 0" />
+      <mass
+        value="0.82669" />
+      <inertia
+        ixx="0.024998"
+        ixy="-1.0698E-16"
+        ixz="3.1212E-17"
+        iyy="0.076856"
+        iyz="5.7713E-17"
+        izz="0.096944" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/BackLeftLink.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.31373 0.31373 0.31373 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/BackLeftLink.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BackLeftJoint"
+    type="continuous">
+    <origin
+      xyz="-0.288 0.245 -0.066"
+      rpy="-1.5708 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="BackLeftLink" />
+    <axis
+      xyz="0 0 -1" />
+    <dynamics
+      damping="0.7" friction="4"
+       />
+    <!--limit
+      lower="0"
+      upper="1"
+      effort="10"
+      velocity="5" />
+    <dynamics
+      damping="0.7"
+      friction="0.1" />
+    <safety_controller
+      soft_upper="0.9"
+      soft_lower="0.1"
+      k_position="0.8"
+      k_velocity="10" /-->
+  </joint>
+  <link
+    name="BackLeftWheel1">
+    <inertial>
+      <origin
+        xyz="1.81663042386759E-08 4.16006673553682E-11 -5.16764409042025E-12"
+        rpy="0 0 0" />
+      <mass
+        value="2.99405359774556" />
+      <inertia
+        ixx="0.125658758012625"
+        ixy="-2.01511301513879E-10"
+        ixz="1.25305158197714E-11"
+        iyy="0.063537725088411"
+        iyz="2.93950407744945E-10"
+        izz="0.0635377250888024" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/BackLeftWheel1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/BackLeftWheel1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BackLeftJoint1"
+    type="continuous">
+    <origin
+      xyz="0.144 0 -0.0695"
+      rpy="3.1416 1.5708 0" />
+    <parent
+      link="BackLeftLink" />
+    <child
+      link="BackLeftWheel1" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="BackLeftWheel2">
+    <inertial>
+      <origin
+        xyz="1.81663042386759E-08 4.16010975667902E-11 -5.16789389060079E-12"
+        rpy="0 0 0" />
+      <mass
+        value="2.99405359774556" />
+      <inertia
+        ixx="0.125658758012626"
+        ixy="-2.01511304255373E-10"
+        ixz="1.2530515085916E-11"
+        iyy="0.0635377250884114"
+        iyz="2.93950424024686E-10"
+        izz="0.0635377250888025" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/BackLeftWheel2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/BackLeftWheel2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BackLeftJoint2"
+    type="continuous">
+    <origin
+      xyz="-0.144 0 -0.1305"
+      rpy="3.1416 1.5708 0" />
+    <parent
+      link="BackLeftLink" />
+    <child
+      link="BackLeftWheel2" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+
+    <!-- Camera joint 1 -->
+  <joint name="camera_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="0.3 0 0.984" rpy="0 0.2349 0"/>
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+  </joint>
+  <!-- Camera -->
+  <link name="camera_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+	<box size="0.05 0.20 0.05"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+	<box size="0.05 0.20 0.05"/>
+      </geometry>
+      <material name="red">
+	<color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+
+
+  <!-- imu joint -->
+  <joint name="imu_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="0.3 0 0.984" rpy="0 0.2349 0"/>
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+  </joint>
+  <!-- imu -->
+  <link name="imu_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+	<box size="0.05 0.05 0.05"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+	<box size="0.05 0.05 0.05"/>
+      </geometry>
+      <material name="red">
+	<color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+</robot>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="enable_ekf" default="$(optenv ENABLE_EKF false)"/>
+
+  <rosparam command="load" file="$(find asm_car_asm)/config/control.yaml" />
+
+  <group if="$(optenv JACKAL_CONTROL_EXTRAS 0)" >
+    <rosparam command="load" file="$(env JACKAL_CONTROL_EXTRAS_PATH)" />
+  </group>
+
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" ns="/"
+  args="husky_joint_publisher husky_fl_joint_position_controller husky_velocity_controller husky_fr_joint_position_controller husky_bl_joint_position_controller husky_br_joint_position_controller husky_kinect_joint_position_controller" />
+
+  <group if="$(arg enable_ekf)" >
+    <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization">
+      <rosparam command="load" file="$(find jackal_control)/config/robot_localization.yaml" />
+    </node>
+  </group>
+
+  <node pkg="twist_mux" type="twist_mux" name="twist_mux">
+    <rosparam command="load" file="$(find jackal_control)/config/twist_mux.yaml" />
+    <remap from="cmd_vel_out" to="husky_velocity_controller/cmd_vel"/>
+  </node>
+
+</launch>
+

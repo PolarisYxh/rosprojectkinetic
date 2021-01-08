@@ -1,0 +1,58 @@
+solid Props_Props_0_Qiang_0
+facet normal 0 1 0
+outer loop
+	vertex 35.8023 -64.74847 64.75452
+	vertex 35.8023 -64.74847 -64.71065
+	vertex 0 -64.74847 64.75452
+endloop
+endfacet
+facet normal 0 1 0
+outer loop
+	vertex 35.8023 -64.74847 -64.71065
+	vertex 0 -64.74847 -64.71066
+	vertex 0 -64.74847 64.75452
+endloop
+endfacet
+facet normal 0 0 -1
+outer loop
+	vertex 35.8023 64.47558 64.75452
+	vertex 35.8023 -64.74847 64.75452
+	vertex 0 64.47558 64.75452
+endloop
+endfacet
+facet normal 0 0 -1
+outer loop
+	vertex 35.8023 -64.74847 64.75452
+	vertex 0 -64.74847 64.75452
+	vertex 0 64.47558 64.75452
+endloop
+endfacet
+facet normal 0 -1 0
+outer loop
+	vertex 35.8023 64.47559 -64.71065
+	vertex 35.8023 64.47558 64.75452
+	vertex 0 64.47558 -64.71065
+endloop
+endfacet
+facet normal 0 -1 0
+outer loop
+	vertex 35.8023 64.47558 64.75452
+	vertex 0 64.47558 64.75452
+	vertex 0 64.47558 -64.71065
+endloop
+endfacet
+facet normal 0 0 1
+outer loop
+	vertex 35.8023 -64.74847 -64.71065
+	vertex 35.8023 64.47559 -64.71065
+	vertex 0 -64.74847 -64.71066
+endloop
+endfacet
+facet normal 0 0 1
+outer loop
+	vertex 35.8023 64.47559 -64.71065
+	vertex 0 64.47558 -64.71065
+	vertex 0 -64.74847 -64.71066
+endloop
+endfacet
+endsolid Props_Props_0_Qiang_0

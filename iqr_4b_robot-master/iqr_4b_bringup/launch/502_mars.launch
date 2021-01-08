@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Short-term hack to support the original front_laser:=true argument for spawning
+       the simulator. This will be removed in favour of using the config:=x arg instead. -->
+
+  <arg name="front_laser" default="false" />
+  <arg name="default_config" value="front_laser" if="$(arg front_laser)" />
+  <arg name="default_config" value="base" unless="$(arg front_laser)" />
+
+  <!-- Configuration of Jackal which you would like to simulate.
+       See jackal_description for details. -->
+  <arg name="config" default="$(arg default_config)" />
+
+  <!-- Launch Gazebo with the specified world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find iqr_4b_bringup)/worlds/my_world.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <!-- Robot Description -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find asm_car_asm)/urdf/asm_car_asm.urdf.xacro" />
+  <!-- Load Jackal's description, controllers, and teleop nodes. -->
+
+  <include file="$(find asm_car_asm)/launch/control.launch" />
+  <include file="$(find jackal_control)/launch/teleop.launch">
+    <arg name="joystick" value="true"/>
+  </include>
+<!-- create web socket api -->
+  <node name="file_server" pkg="file_server" type="file_server" output="screen" />
+  <param name="robot/name" value="502" />
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" >
+     <arg name="port" value="5901"/>
+	<arg name="address" value="127.0.0.1"/>
+  </include>
+  <node name="joy_to_twist" pkg="gazebo_simulation_scene" type="joy_to_twist.py" output="screen"/>
+  <!--node pkg="rosbag" type="record" name="bag_record" args="/stereocamera/left/image_raw/compressed /stereocamera/right/camera_info /stereocamera/right/image_raw/compressed /camera/depth/camera_info /camera/depth/image_raw /camera/rgb/camera_info /camera/rgb/image_raw/compressed /gazebo/model_states /stereocamera/left/image_raw/compressed /stereocamera/right/camera_info /stereocamera/right/image_raw/compressed /laser/scan /imu/data"/>
+ <node pkg="rosbag" type="record" name="bag_record" args=" /gazebo/model_states  /stereocamera/left/image_raw/compressed /stereocamera/right/camera_info /stereocamera/right/image_raw/compressed /imu/data"/-->
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+	respawn="false" output="screen">
+    <remap from="/joint_states" to="/joint_states" />
+  </node>
+  <!-- Spawn Jackal -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+	      args="-urdf -model zhike -param robot_description -x 0 -y 0 -z 1.0" />
+</launch>

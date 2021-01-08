@@ -1,0 +1,86 @@
+solid Props_Props_0_Cam_taizi_18_0
+facet normal 1 0 0
+outer loop
+	vertex 10.3995 1.846 37.6845
+	vertex 10.3995 1.846 39.1845
+	vertex 10.3995 0.346 37.6845
+endloop
+endfacet
+facet normal 1 0 0
+outer loop
+	vertex 10.3995 1.846 39.1845
+	vertex 10.3995 0.346 39.1845
+	vertex 10.3995 0.346 37.6845
+endloop
+endfacet
+facet normal -1 0 0
+outer loop
+	vertex 9.9995 0.346 39.1845
+	vertex 9.9995 1.846 39.1845
+	vertex 9.9995 0.346 37.6845
+endloop
+endfacet
+facet normal -1 0 0
+outer loop
+	vertex 9.9995 1.846 39.1845
+	vertex 9.9995 1.846 37.6845
+	vertex 9.9995 0.346 37.6845
+endloop
+endfacet
+facet normal 0 1 0
+outer loop
+	vertex 9.9995 1.846 39.1845
+	vertex 10.3995 1.846 39.1845
+	vertex 9.9995 1.846 37.6845
+endloop
+endfacet
+facet normal 0 1 0
+outer loop
+	vertex 10.3995 1.846 39.1845
+	vertex 10.3995 1.846 37.6845
+	vertex 9.9995 1.846 37.6845
+endloop
+endfacet
+facet normal 0 0 -1
+outer loop
+	vertex 9.9995 1.846 37.6845
+	vertex 10.3995 1.846 37.6845
+	vertex 9.9995 0.346 37.6845
+endloop
+endfacet
+facet normal 0 0 -1
+outer loop
+	vertex 10.3995 1.846 37.6845
+	vertex 10.3995 0.346 37.6845
+	vertex 9.9995 0.346 37.6845
+endloop
+endfacet
+facet normal 0 -1 0
+outer loop
+	vertex 9.9995 0.346 37.6845
+	vertex 10.3995 0.346 37.6845
+	vertex 9.9995 0.346 39.1845
+endloop
+endfacet
+facet normal 0 -1 0
+outer loop
+	vertex 10.3995 0.346 37.6845
+	vertex 10.3995 0.346 39.1845
+	vertex 9.9995 0.346 39.1845
+endloop
+endfacet
+facet normal 0 0 1
+outer loop
+	vertex 9.9995 0.346 39.1845
+	vertex 10.3995 0.346 39.1845
+	vertex 9.9995 1.846 39.1845
+endloop
+endfacet
+facet normal 0 0 1
+outer loop
+	vertex 10.3995 0.346 39.1845
+	vertex 10.3995 1.846 39.1845
+	vertex 9.9995 1.846 39.1845
+endloop
+endfacet
+endsolid Props_Props_0_Cam_taizi_18_0

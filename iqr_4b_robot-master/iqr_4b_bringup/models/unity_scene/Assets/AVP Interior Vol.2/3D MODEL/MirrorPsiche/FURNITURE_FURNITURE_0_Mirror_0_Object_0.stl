@@ -1,0 +1,16 @@
+solid FURNITURE_FURNITURE_0_Mirror_0_Object_0
+facet normal 0 -0.9975641 0.06975651
+outer loop
+	vertex -0.7849942 -0.08848425 -0.836224
+	vertex -0.005002071 -0.08848417 -0.836224
+	vertex -0.7849942 0.04547204 1.079439
+endloop
+endfacet
+facet normal 0 -0.9975641 0.06975651
+outer loop
+	vertex -0.005002071 -0.08848417 -0.836224
+	vertex -0.00500209 0.04547212 1.079439
+	vertex -0.7849942 0.04547204 1.079439
+endloop
+endfacet
+endsolid FURNITURE_FURNITURE_0_Mirror_0_Object_0

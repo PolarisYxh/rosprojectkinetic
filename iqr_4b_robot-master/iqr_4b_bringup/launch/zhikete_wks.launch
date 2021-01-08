@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Short-term hack to support the original front_laser:=true argument for spawning
+       the simulator. This will be removed in favour of using the config:=x arg instead. -->
+
+  <arg name="front_laser" default="false" />
+  <arg name="default_config" value="front_laser" if="$(arg front_laser)" />
+  <arg name="default_config" value="base" unless="$(arg front_laser)" />
+  <!-- end of hack -->
+
+  <!-- Configuration of Jackal which you would like to simulate.
+       See jackal_description for details. -->
+  <arg name="config" default="$(arg default_config)" />
+
+  <!-- Launch Gazebo with the specified world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find iqr_4b_bringup)/worlds/gazebo-wks.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <!-- Robot Description -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find iqr_4b_description)/urdf/iqr_4b_robot.urdf.xacro" />
+  <!-- Load Jackal's description, controllers, and teleop nodes. -->
+
+  <include file="$(find jackal_control)/launch/control.launch" />
+  <include file="$(find jackal_control)/launch/teleop.launch">
+    <arg name="joystick" value="true"/>
+  </include>
+  <!--kinova arm control-->>
+  <arg name="kinova_robotType" default="j2n6s300"/>
+  <arg name="kinova_robotName" default="$(arg kinova_robotType)"/>
+  <arg name="use_trajectory_controller" default="true"/>
+  <arg name="is7dof" default="false"/>
+  <rosparam file="$(find kinova_control)/config/$(arg kinova_robotName)_control.yaml" command="load"/>
+  <group unless="$(arg use_trajectory_controller)">
+    <group unless="$(arg is7dof)">
+      <!-- load the joint by joint position controllers -->
+      <node name="$(arg kinova_robotName)_joints_controller" pkg="controller_manager" type="spawner" respawn="false"
+        output="screen"
+       args="joint_1_position_controller joint_2_position_controller
+               joint_3_position_controller joint_4_position_controller
+               joint_5_position_controller joint_6_position_controller
+               finger_2_position_controller finger_1_position_controller
+               finger_3_position_controller finger_tip_1_position_controller
+               finger_tip_2_position_controller finger_tip_3_position_controller
+               joint_state_controller"/>
+    </group>
+    <group if="$(arg is7dof)">
+      <!-- load the joint by joint position controllers -->
+      <node name="$(arg kinova_robotName)_joints_controller" pkg="controller_manager" type="spawner" respawn="false"
+        output="screen"
+       args="joint_1_position_controller joint_2_position_controller
+               joint_3_position_controller joint_4_position_controller
+               joint_5_position_controller joint_6_position_controller joint_7_position_controller
+               finger_2_position_controller finger_1_position_controller
+               finger_3_position_controller finger_tip_1_position_controller
+               finger_tip_2_position_controller finger_tip_3_position_controller
+               joint_state_controller"/>
+    </group>
+    <include file="$(find kinova_control)/launch/kinova_rqt.launch">
+      <arg name="kinova_robotType" value="$(arg kinova_robotType)"/>
+    </include>
+  </group>
+
+  <group if="$(arg use_trajectory_controller)">
+    <!-- Effort Joint trajectory controller-->
+    <node name="$(arg kinova_robotName)_trajectory_controller" pkg="controller_manager" type="spawner"
+      output="screen" 
+      args="effort_joint_trajectory_controller
+      effort_finger_trajectory_controller
+      finger_tip_1_position_controller
+      finger_tip_2_position_controller
+      finger_tip_3_position_controller
+      joint_state_controller"/>
+  </group>
+      <!--机械臂复位-->
+    <node name="command_robot_home_pose" pkg="kinova_control" type="zhike_move_robot.py"
+        respawn="false" output="screen" args="$(arg kinova_robotType)">
+    </node>
+<!-- create web socket api -->
+  <node name="file_server" pkg="file_server" type="file_server" output="screen" />
+  <param name="robot/name" value="zhike" />
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" >
+     <arg name="port" value="9091"/>
+	<arg name="address" value="127.0.0.1"/>
+  </include>
+  <node name="joy_to_twist" pkg="gazebo_simulation_scene" type="joy_to_twist.py" output="screen"/>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  <!-- Spawn Jackal -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
+	      args="-urdf -model zhike -param robot_description -x 0 -y 0 -z 1.0 
+        -J $(arg kinova_robotType)_joint_1 0.0
+        -J $(arg kinova_robotType)_joint_2 2.9
+        -J $(arg kinova_robotType)_joint_3 1.3
+        -J $(arg kinova_robotType)_joint_4 -2.07
+        -J $(arg kinova_robotType)_joint_5 1.4
+        -J $(arg kinova_robotType)_joint_6 0.0
+        -J $(arg kinova_robotType)_joint_finger_1 1.0
+        -J $(arg kinova_robotType)_joint_finger_2 1.0
+        -J $(arg kinova_robotType)_joint_finger_3 1.0" />
+
+
+</launch>

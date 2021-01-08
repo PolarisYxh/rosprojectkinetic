@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Short-term hack to support the original front_laser:=true argument for spawning
+       the simulator. This will be removed in favour of using the config:=x arg instead. -->
+
+  <!-- Configuration of Jackal which you would like to simulate.
+       See jackal_description for details. -->
+  <!-- Launch Gazebo with the specified world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find iqr_4b_bringup)/worlds/my_world.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <!-- Robot Description -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find iqr_4b_description)/urdf/kinect.urdf.xacro" />
+
+
+<!-- create web socket api -->
+  <node name="file_server" pkg="file_server" type="file_server" output="screen" />
+  <param name="robot/name" value="zhike" />
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" > 
+     <arg name="port" value="9091"/>
+	<arg name="address" value="192.168.3.2"/>
+  </include>
+  <node name="joy_to_twist" pkg="gazebo_simulation_scene" type="joy_to_twist.py" output="screen"/>
+  <!--node pkg="rosbag" type="record" name="bag_record" args="/stereocamera/left/image_raw/compressed /stereocamera/right/camera_info /stereocamera/right/image_raw/compressed /camera/depth/camera_info /camera/depth/image_raw /camera/rgb/camera_info /camera/rgb/image_raw/compressed /gazebo/model_states /stereocamera/left/image_raw/compressed /stereocamera/right/camera_info /stereocamera/right/image_raw/compressed /laser/scan /imu/data"/-->
+  <!--node pkg="rosbag" type="record" name="bag_record" args=" /gazebo/model_states  /stereocamera/left/image_raw/compressed /stereocamera/right/camera_info /stereocamera/right/image_raw/compressed /imu/data"/-->  
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  <!-- Spawn Jackal -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
+	      args="-urdf -model zhike -param robot_description -x 0 -y 0 -z 1.0" />
+</launch>

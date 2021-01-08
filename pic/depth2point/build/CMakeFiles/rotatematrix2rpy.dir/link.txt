@@ -1,0 +1,1 @@
+/usr/bin/x86_64-linux-gnu-g++-7  -std=c++11 -O3 -g -O0  -O3 -DNDEBUG    -rdynamic CMakeFiles/rotatematrix2rpy.dir/rotatematrix2rpy.cpp.o  -o rotatematrix2rpy 

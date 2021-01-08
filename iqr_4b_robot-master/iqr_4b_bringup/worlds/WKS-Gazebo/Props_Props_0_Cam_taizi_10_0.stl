@@ -1,0 +1,86 @@
+solid Props_Props_0_Cam_taizi_10_0
+facet normal 0 0.9278016 -0.3730739
+outer loop
+	vertex 9.1928 -26.7003 -32.3043
+	vertex 9.792799 -26.7003 -32.3043
+	vertex 9.1928 -27.0363 -33.1393
+endloop
+endfacet
+facet normal 0 0.9278016 -0.3730739
+outer loop
+	vertex 9.792799 -26.7003 -32.3043
+	vertex 9.792799 -27.0363 -33.1393
+	vertex 9.1928 -27.0363 -33.1393
+endloop
+endfacet
+facet normal 0 -0.38722 -0.9219873
+outer loop
+	vertex 9.1928 -27.0363 -33.1393
+	vertex 9.792799 -27.0363 -33.1393
+	vertex 9.1928 -28.7412 -32.4232
+endloop
+endfacet
+facet normal 0 -0.387191 -0.9219996
+outer loop
+	vertex 9.792799 -27.0363 -33.1393
+	vertex 9.792799 -28.7412 -32.4232
+	vertex 9.1928 -28.7412 -32.4232
+endloop
+endfacet
+facet normal 0 -0.9277734 0.373144
+outer loop
+	vertex 9.1928 -28.7412 -32.4232
+	vertex 9.792799 -28.7412 -32.4232
+	vertex 9.1928 -28.4053 -31.5882
+endloop
+endfacet
+facet normal 0 -0.9277453 0.373214
+outer loop
+	vertex 9.792799 -28.7412 -32.4232
+	vertex 9.792799 -28.4053 -31.5882
+	vertex 9.1928 -28.4053 -31.5882
+endloop
+endfacet
+facet normal 0 0.387162 0.9220118
+outer loop
+	vertex 9.1928 -28.4053 -31.5882
+	vertex 9.792799 -28.4053 -31.5882
+	vertex 9.1928 -26.7003 -32.3043
+endloop
+endfacet
+facet normal 0 0.387162 0.9220118
+outer loop
+	vertex 9.792799 -28.4053 -31.5882
+	vertex 9.792799 -26.7003 -32.3043
+	vertex 9.1928 -26.7003 -32.3043
+endloop
+endfacet
+facet normal -1 0 0
+outer loop
+	vertex 9.1928 -27.0363 -33.1393
+	vertex 9.1928 -28.7412 -32.4232
+	vertex 9.1928 -26.7003 -32.3043
+endloop
+endfacet
+facet normal -1 0 0
+outer loop
+	vertex 9.1928 -28.7412 -32.4232
+	vertex 9.1928 -28.4053 -31.5882
+	vertex 9.1928 -26.7003 -32.3043
+endloop
+endfacet
+facet normal 1 0 0
+outer loop
+	vertex 9.792799 -27.0363 -33.1393
+	vertex 9.792799 -26.7003 -32.3043
+	vertex 9.792799 -28.7412 -32.4232
+endloop
+endfacet
+facet normal 1 0 0
+outer loop
+	vertex 9.792799 -26.7003 -32.3043
+	vertex 9.792799 -28.4053 -31.5882
+	vertex 9.792799 -28.7412 -32.4232
+endloop
+endfacet
+endsolid Props_Props_0_Cam_taizi_10_0

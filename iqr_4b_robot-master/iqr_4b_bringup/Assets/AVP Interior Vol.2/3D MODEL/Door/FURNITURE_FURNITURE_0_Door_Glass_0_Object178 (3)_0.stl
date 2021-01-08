@@ -1,0 +1,86 @@
+solid FURNITURE_FURNITURE_0_Door_Glass_0_Object178 (3)_0
+facet normal 0 -1 0
+outer loop
+	vertex 0 -0.508519 -0.02449951
+	vertex 2.4 -0.508519 -0.02449951
+	vertex 0 -0.508519 -0.009499206
+endloop
+endfacet
+facet normal 0 -1 0
+outer loop
+	vertex 2.4 -0.508519 -0.009499205
+	vertex 0 -0.508519 -0.009499206
+	vertex 2.4 -0.508519 -0.02449951
+endloop
+endfacet
+facet normal 0 0 1
+outer loop
+	vertex 0 -0.508519 -0.009499206
+	vertex 2.4 -0.508519 -0.009499205
+	vertex 0 0.55 -0.009499206
+endloop
+endfacet
+facet normal 0 0 1
+outer loop
+	vertex 2.4 0.55 -0.009499206
+	vertex 0 0.55 -0.009499206
+	vertex 2.4 -0.508519 -0.009499205
+endloop
+endfacet
+facet normal 0 1 0
+outer loop
+	vertex 0 0.55 -0.009499206
+	vertex 2.4 0.55 -0.009499206
+	vertex 0 0.55 -0.02449951
+endloop
+endfacet
+facet normal 0 1 0
+outer loop
+	vertex 2.4 0.55 -0.02449951
+	vertex 0 0.55 -0.02449951
+	vertex 2.4 0.55 -0.009499206
+endloop
+endfacet
+facet normal 0 0 -1
+outer loop
+	vertex 0 0.55 -0.02449951
+	vertex 2.4 0.55 -0.02449951
+	vertex 0 -0.508519 -0.02449951
+endloop
+endfacet
+facet normal 0 0 -1
+outer loop
+	vertex 2.4 -0.508519 -0.02449951
+	vertex 0 -0.508519 -0.02449951
+	vertex 2.4 0.55 -0.02449951
+endloop
+endfacet
+facet normal 1 0 0
+outer loop
+	vertex 2.4 0.55 -0.02449951
+	vertex 2.4 0.55 -0.009499206
+	vertex 2.4 -0.508519 -0.02449951
+endloop
+endfacet
+facet normal 1 0 0
+outer loop
+	vertex 2.4 -0.508519 -0.009499205
+	vertex 2.4 -0.508519 -0.02449951
+	vertex 2.4 0.55 -0.009499206
+endloop
+endfacet
+facet normal -1 0 0
+outer loop
+	vertex 0 -0.508519 -0.009499206
+	vertex 0 0.55 -0.009499206
+	vertex 0 -0.508519 -0.02449951
+endloop
+endfacet
+facet normal -1 0 0
+outer loop
+	vertex 0 0.55 -0.02449951
+	vertex 0 -0.508519 -0.02449951
+	vertex 0 0.55 -0.009499206
+endloop
+endfacet
+endsolid FURNITURE_FURNITURE_0_Door_Glass_0_Object178 (3)_0

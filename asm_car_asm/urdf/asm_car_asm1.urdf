@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="asm_car_asm">
+    <link name="base_footprint">
+        <visual>
+            <geometry>
+                    <box size="0.001 0.001 0.001"/>
+                </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+        </visual>
+    </link>
+    <joint name="base_footprint_joint" type="fixed">
+        <origin xyz="0 0 0" />
+        <parent link="base_footprint" />
+        <child link="base_link" />
+    </joint>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="1.049196782881E-15 -1.51734255681251E-15 -0.111330753346375"
+        rpy="0 0 0" />
+      <mass
+        value="0.826691190957249" />
+      <inertia
+        ixx="0.0249975874157002"
+        ixy="-7.52271136280225E-17"
+        ixz="2.82864435855665E-17"
+        iyy="0.0768556941113596"
+        iyz="6.0659568181077E-17"
+        izz="0.0969436158700248" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.313725490196078 0.313725490196078 0.313725490196078 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="body">
+    <inertial>
+      <origin
+        xyz="0.00748877624058336 -1.40564993411333E-15 0.126875504146603"
+        rpy="0 0 0" />
+      <mass
+        value="1.00302107294553" />
+      <inertia
+        ixx="0.0353961113249428"
+        ixy="-5.66459128650649E-17"
+        ixz="-0.000522977464601806"
+        iyy="0.110631619010978"
+        iyz="1.21496766163631E-17"
+        izz="0.134718731941543" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/body.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.313725490196078 0.313725490196078 0.313725490196078 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/body.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="body_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="body" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="rack_Link">
+    <inertial>
+      <origin
+        xyz="-1.79969614716557E-11 0.140184473428739 0.1757564007541"
+        rpy="0 0 0" />
+      <mass
+        value="6.56017677903339" />
+      <inertia
+        ixx="0.170168272052352"
+        ixy="-2.67547151839763E-12"
+        ixz="-5.81828697036444E-12"
+        iyy="0.147109365957286"
+        iyz="0.00776074128079464"
+        izz="0.0522121702201837" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/rack_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/rack_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rack_joint"
+    type="fixed">
+    <origin
+      xyz="0.502 0 0.226"
+      rpy="0 0 1.5708" />
+    <parent
+      link="body" />
+    <child
+      link="rack_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="FrontLeft_Link">
+    <inertial>
+      <origin
+        xyz="-0.0162620694026895 0 -0.0208244147590206"
+        rpy="0 0 0" />
+      <mass
+        value="1.79218615150526" />
+      <inertia
+        ixx="0.00265370284480665"
+        ixy="-1.82350288041465E-19"
+        ixz="-0.00144065197407825"
+        iyy="0.0257376544776968"
+        iyz="-9.25715958430322E-21"
+        izz="0.0257584221294946" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/FrontLeft_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.149019607843137 0.517647058823529 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/FrontLeft_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FrontLeftJoint"
+    type="revolute">
+    <origin
+      xyz="0.288 0.245 -0.066"
+      rpy="-1.5708 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="FrontLeft_Link" />
+    <axis
+      xyz="0 0 1" />
+	  <limit lower="0.0"
+         upper="1.0"
+         effort="10.0"
+         velocity="5.0" />
+<dynamics damping="5.0" friction="1.0"/>
+  <!-- Soft limits -->
+  <safety_controller k_position="0.8"
+                     k_velocity="10"
+                     soft_lower_limit="0.1"
+                     soft_upper_limit="0.9" />
+  </joint>
+  <link
+    name="FrontLeftWheel1">
+    <inertial>
+      <origin
+        xyz="1.81663042386759E-08 4.16008616443975E-11 -5.16786613502518E-12"
+        rpy="0 0 0" />
+      <mass
+        value="2.99405359774556" />
+      <inertia
+        ixx="0.125658758012625"
+        ixy="-2.01511313553579E-10"
+        ixz="1.2530514361123E-11"
+        iyy="0.0635377250884112"
+        iyz="2.93950370238922E-10"
+        izz="0.0635377250888026" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.5708 0" />
+      <geometry>
+	<cylinder length="0.055" radius="0.2325" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+     <origin
+        xyz="0 0 0"
+        rpy="0 1.5708 0" />
+      <geometry>
+	<cylinder length="0.055" radius="0.2325" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FrontLeftJoint1"
+    type="continuous">
+    <origin
+      xyz="-0.144 0 -0.1305"
+      rpy="3.1416 1.5708 0" />
+    <parent
+      link="FrontLeft_Link" />
+    <child
+      link="FrontLeftWheel1" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="FrontLeftWheel2">
+    <inertial>
+      <origin
+        xyz="1.81663042386759E-08 4.1601042055639E-11 -5.16764409042025E-12"
+        rpy="0 0 0" />
+      <mass
+        value="2.99405359774556" />
+      <inertia
+        ixx="0.125658758012625"
+        ixy="-2.01511310493956E-10"
+        ixz="1.25305206703153E-11"
+        iyy="0.0635377250884112"
+        iyz="2.9395036587968E-10"
+        izz="0.0635377250888023" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.5708 0" />
+      <geometry>
+	<cylinder length="0.055" radius="0.2325" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.5708 0" />
+      <geometry>
+	<cylinder length="0.055" radius="0.2325" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FrontLeftJoint2"
+    type="continuous">
+    <origin
+      xyz="0.144 0 -0.0695"
+      rpy="3.1416 1.5708 0" />
+    <parent
+      link="FrontLeft_Link" />
+    <child
+      link="FrontLeftWheel2" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="FrontRightLink">
+    <inertial>
+      <origin
+        xyz="-0.0162620694026895 0 -0.0208244147590206"
+        rpy="0 0 0" />
+      <mass
+        value="1.79218615150526" />
+      <inertia
+        ixx="0.00265370284480666"
+        ixy="-3.74712782633937E-19"
+        ixz="-0.00144065197407825"
+        iyy="0.0257376544776969"
+        iyz="3.55274614255389E-19"
+        izz="0.0257584221294946" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/FrontRightLink.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.149019607843137 0.517647058823529 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/FrontRightLink.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FrontRightJoint"
+    type="revolute">
+    <origin
+      xyz="0.288 -0.245 -0.066"
+      rpy="1.5707963267949 0 3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="FrontRightLink" />
+        <axis
+      xyz="0 0 1" />
+	  <limit lower="0.0"
+         upper="1.0"
+         effort="10.0"
+         velocity="5.0" />
+<dynamics damping="5.0" friction="1.0"/>
+  <!-- Soft limits -->
+  <safety_controller k_position="0.8"
+                     k_velocity="10"
+                     soft_lower_limit="0.1"
+                     soft_upper_limit="0.9" />
+  </joint>
+  <link
+    name="FrontRightWheel1">
+    <inertial>
+      <origin
+        xyz="1.81663041831648E-08 -4.16008616443975E-11 5.16786613502518E-12"
+        rpy="0 0 0" />
+      <mass
+        value="2.99405359774556" />
+      <inertia
+        ixx="0.125658758012625"
+        ixy="2.01511299412951E-10"
+        ixz="-1.25305170682696E-11"
+        iyy="0.0635377250884111"
+        iyz="2.9395040736196E-10"
+        izz="0.0635377250888023" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.5708 0" />
+      <geometry>
+	<cylinder length="0.055" radius="0.2325" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.5708 0" />
+      <geometry>
+	<cylinder length="0.055" radius="0.2325" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FrontRightJoint1"
+    type="continuous">
+    <origin
+      xyz="-0.144 0 -0.1305"
+      rpy="0 1.5708 0" />
+    <parent
+      link="FrontRightLink" />
+    <child
+      link="FrontRightWheel1" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="FrontRightWheel2">
+    <inertial>
+      <origin
+        xyz="1.81663042941871E-08 -4.16010004222755E-11 5.16781062387395E-12"
+        rpy="0 0 0" />
+      <mass
+        value="2.99405359774555" />
+      <inertia
+        ixx="0.125658758012625"
+        ixy="2.01511305900651E-10"
+        ixz="-1.25305184086115E-11"
+        iyy="0.0635377250884111"
+        iyz="2.93950405009459E-10"
+        izz="0.0635377250888022" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.5708 0" />
+      <geometry>
+	<cylinder length="0.055" radius="0.2325" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.5708 0" />
+      <geometry>
+	<cylinder length="0.055" radius="0.2325" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FrontRightJoint2"
+    type="continuous">
+    <origin
+      xyz="0.144 0 -0.0695"
+      rpy="0 1.5708 0" />
+    <parent
+      link="FrontRightLink" />
+    <child
+      link="FrontRightWheel2" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="BackRightLink">
+    <inertial>
+      <origin
+        xyz="-0.0162620694026895 0 -0.0208244147590207"
+        rpy="0 0 0" />
+      <mass
+        value="1.79218615150526" />
+      <inertia
+        ixx="0.00265370284480667"
+        ixy="-5.70386703967181E-19"
+        ixz="-0.00144065197407825"
+        iyy="0.0257376544776968"
+        iyz="1.19797750715368E-19"
+        izz="0.0257584221294946" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/BackRightLink.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.149019607843137 0.517647058823529 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/BackRightLink.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BackRightJoint"
+    type="revolute">
+    <origin
+      xyz="-0.288 -0.245 -0.066"
+      rpy="1.5707963267949 0 3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="BackRightLink" />
+        <axis
+      xyz="0 0 1" />
+	  <limit lower="0.0"
+         upper="1.0"
+         effort="10.0"
+         velocity="5.0" />
+<dynamics damping="5.0" friction="1.0"/>
+  <!-- Soft limits -->
+  <safety_controller k_position="0.8"
+                     k_velocity="10"
+                     soft_lower_limit="0.1"
+                     soft_upper_limit="0.9" />
+  </joint>
+  <link
+    name="BackRightWheel1">
+    <inertial>
+      <origin
+        xyz="1.81663042386759E-08 -4.16009726666999E-11 5.16769960157148E-12"
+        rpy="0 0 0" />
+      <mass
+        value="2.99405359774556" />
+      <inertia
+        ixx="0.125658758012625"
+        ixy="2.0151130103845E-10"
+        ixz="-1.25305176970732E-11"
+        iyy="0.0635377250884111"
+        iyz="2.93950427391312E-10"
+        izz="0.0635377250888023" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.5708 0" />
+      <geometry>
+	<cylinder length="0.055" radius="0.2325" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.5708 0" />
+      <geometry>
+	<cylinder length="0.055" radius="0.2325" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BackRightJoint1"
+    type="continuous">
+    <origin
+      xyz="0.144 0 -0.0695"
+      rpy="0 1.5708 0" />
+    <parent
+      link="BackRightLink" />
+    <child
+      link="BackRightWheel1" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="BackRightWheel2">
+    <inertial>
+      <origin
+        xyz="1.81663041831648E-08 -4.16009449111243E-11 5.16756082369341E-12"
+        rpy="0 0 0" />
+      <mass
+        value="2.99405359774556" />
+      <inertia
+        ixx="0.125658758012625"
+        ixy="2.01511303939349E-10"
+        ixz="-1.25305217685236E-11"
+        iyy="0.0635377250884112"
+        iyz="2.93950344762586E-10"
+        izz="0.0635377250888024" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.5708 0" />
+      <geometry>
+	<cylinder length="0.055" radius="0.2325" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.5708 0" />
+      <geometry>
+	<cylinder length="0.055" radius="0.2325" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BackRightJoint2"
+    type="continuous">
+    <origin
+      xyz="-0.144 0 -0.1305"
+      rpy="0 1.5707963267949 0" />
+    <parent
+      link="BackRightLink" />
+    <child
+      link="BackRightWheel2" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="BackLeftLink">
+    <inertial>
+      <origin
+        xyz="-0.0162620694026895 0 -0.0208244147590206"
+        rpy="0 0 0" />
+      <mass
+        value="1.79218615150526" />
+      <inertia
+        ixx="0.00265370284480667"
+        ixy="-3.67474297666951E-19"
+        ixz="-0.00144065197407825"
+        iyy="0.0257376544776968"
+        iyz="-4.77872464621038E-20"
+        izz="0.0257584221294946" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/BackLeftLink.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.149019607843137 0.517647058823529 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asm_car_asm/meshes/BackLeftLink.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BackLeftJoint"
+    type="revolute">
+    <origin
+      xyz="-0.288 0.245 -0.066"
+      rpy="-1.5707963267949 0 3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="BackLeftLink" />
+        <axis
+      xyz="0 0 1" />
+	  <limit lower="0.0"
+         upper="1.0"
+         effort="10.0"
+         velocity="5.0" />
+<dynamics damping="5.0" friction="1.0"/>
+  <!-- Soft limits -->
+  <safety_controller k_position="0.8"
+                     k_velocity="10"
+                     soft_lower_limit="0.1"
+                     soft_upper_limit="0.9" />
+  </joint>
+  <link
+    name="BackLeftWheel1">
+    <inertial>
+      <origin
+        xyz="1.81663042386759E-08 4.16006534775804E-11 -5.16764409042025E-12"
+        rpy="0 0 0" />
+      <mass
+        value="2.99405359774556" />
+      <inertia
+        ixx="0.125658758012625"
+        ixy="-2.01511301505588E-10"
+        ixz="1.25305158858522E-11"
+        iyy="0.0635377250884111"
+        iyz="2.93950405965679E-10"
+        izz="0.0635377250888024" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.5708 0" />
+      <geometry>
+	<cylinder length="0.055" radius="0.2325" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.5708 0" />
+      <geometry>
+	<cylinder length="0.055" radius="0.2325" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BackLeftJoint1"
+    type="continuous">
+    <origin
+      xyz="0.144 0 -0.0695"
+      rpy="3.1416 1.5708 0" />
+    <parent
+      link="BackLeftLink" />
+    <child
+      link="BackLeftWheel1" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="BackLeftWheel2">
+    <inertial>
+      <origin
+        xyz="1.81663042386759E-08 4.16010698112146E-11 -5.16789389060079E-12"
+        rpy="0 0 0" />
+      <mass
+        value="2.99405359774556" />
+      <inertia
+        ixx="0.125658758012626"
+        ixy="-2.01511304261986E-10"
+        ixz="1.25305150788844E-11"
+        iyy="0.0635377250884114"
+        iyz="2.93950421854165E-10"
+        izz="0.0635377250888025" />
+    </inertial>
+    <visual>
+     <origin
+        xyz="0 0 0"
+        rpy="0 1.5708 0" />
+      <geometry>
+	<cylinder length="0.055" radius="0.2325" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.5708 0" />
+      <geometry>
+	<cylinder length="0.055" radius="0.2325" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BackLeftJoint2"
+    type="continuous">
+    <origin
+      xyz="-0.144 0 -0.1305"
+      rpy="3.14159265358979 1.5707963267949 0" />
+    <parent
+      link="BackLeftLink" />
+    <child
+      link="BackLeftWheel2" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+</robot>

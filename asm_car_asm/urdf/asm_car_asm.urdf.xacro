@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com)
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="asm_car_asm">
+	  <xacro:arg name="transmission_hw_interface" default="hardware_interface/PositionJointInterface"/>
+
+  <!-- ur5 -->
+  <xacro:include filename="$(find ur_description)/urdf/ur5.urdf.xacro" />
+
+  <!-- arm -->
+  <xacro:ur5_robot prefix="ur5_" joint_limited="true"
+    shoulder_pan_lower_limit="${-pi}" shoulder_pan_upper_limit="${pi}"
+    shoulder_lift_lower_limit="${-pi}" shoulder_lift_upper_limit="${pi}"
+    elbow_joint_lower_limit="${-pi}" elbow_joint_upper_limit="${pi}"
+    wrist_1_lower_limit="${-pi}" wrist_1_upper_limit="${pi}"
+    wrist_2_lower_limit="${-pi}" wrist_2_upper_limit="${pi}"
+    wrist_3_lower_limit="${-pi}" wrist_3_upper_limit="${pi}"
+    transmission_hw_interface="$(arg transmission_hw_interface)"
+  />
+
+  <include filename="$(find asm_car_asm)/urdf/asm_car_asm.urdf"/>
+<gazebo>
+  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+    <!--robotNamespace>/</robotNamespace>
+    <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType-->
+    <legacyModeNS>true</legacyModeNS>
+  </plugin>
+</gazebo>
+<gazebo reference="body">
+	<material>Gazebo/Black</material>
+</gazebo>
+<gazebo reference="rack_link">
+	<material>Gazebo/Red</material>
+</gazebo>
+<gazebo reference="FrontRightLink">
+	<material>Gazebo/Blue</material>
+</gazebo>
+<gazebo reference="FrontLeftLink">
+	<material>Gazebo/Blue</material>
+</gazebo>
+<gazebo reference="BackRightLink">
+	<material>Gazebo/Blue</material>
+</gazebo>
+<gazebo reference="BackLeftLink">
+	<material>Gazebo/Blue</material>
+</gazebo>
+<gazebo reference="BackLeftWheel1">
+			<selfCollide>true</selfCollide>
+			<mu1 value="0.5"/>
+			<mu2 value="2"/>
+			<kp value="10000000.0" />
+			<kd value="1.0" />
+			<fdir1 value="1 0 0"/>
+			<material>Gazebo/Black</material>
+</gazebo>
+<gazebo reference="BackLeftWheel2">
+<selfCollide>true</selfCollide>
+			<mu1 value="0.5"/>
+			<mu2 value="2"/>
+			<kp value="10000000.0" />
+			<kd value="1.0" />
+			<fdir1 value="1 0 0"/>
+			<material>Gazebo/Black</material>
+</gazebo>
+<gazebo reference="FrontLeftWheel1">
+<selfCollide>true</selfCollide>
+			<mu1 value="0.5"/>
+			<mu2 value="2"/>
+			<kp value="10000000.0" />
+			<kd value="1.0" />
+			<fdir1 value="1 0 0"/>
+			<material>Gazebo/Black</material>
+</gazebo>
+<gazebo reference="FrontLeftWheel2">
+<selfCollide>true</selfCollide>
+			<mu1 value="0.5"/>
+			<mu2 value="2"/>
+			<kp value="10000000.0" />
+			<kd value="1.0" />
+			<fdir1 value="1 0 0"/>
+			<material>Gazebo/Black</material>
+</gazebo>
+<gazebo reference="BackRightWheel1">
+<selfCollide>true</selfCollide>
+			<mu1 value="0.5"/>
+			<mu2 value="2"/>
+			<kp value="10000000.0" />
+			<kd value="1.0" />
+			<fdir1 value="1 0 0"/>
+			<material>Gazebo/Black</material>
+</gazebo>
+<gazebo reference="BackRightWheel2">
+<selfCollide>true</selfCollide>
+			<mu1 value="0.5"/>
+			<mu2 value="2"/>
+			<kp value="10000000.0" />
+			<kd value="1.0" />
+			<fdir1 value="1 0 0"/>
+			<material>Gazebo/Black</material>
+</gazebo>
+<gazebo reference="FrontRightWheel1">
+<selfCollide>true</selfCollide>
+			<mu1 value="0.5"/>
+			<mu2 value="2"/>
+			<kp value="10000000.0" />
+			<kd value="1.0" />
+			<fdir1 value="1 0 0"/>
+			<material>Gazebo/Black</material>
+</gazebo>
+<gazebo reference="FrontRightWheel2">
+<selfCollide>true</selfCollide>
+			<mu1 value="0.5"/>
+			<mu2 value="2"/>
+			<kp value="10000000.0" />
+			<kd value="1.0" />
+			<fdir1 value="1 0 0"/>
+			<material>Gazebo/Black</material>
+</gazebo>
+<gazebo reference="FrontRightLink">
+          <selfCollide>false</selfCollide>
+			<mu1>4</mu1>
+    <mu2>4</mu2>
+	<kp value="10000000.0" />
+			<kd value="1.0" />
+</gazebo>
+<gazebo reference="FrontLeftLink">
+          <selfCollide>false</selfCollide>
+			<mu1>4</mu1>
+    <mu2>4</mu2>
+	<kp value="10000000.0" />
+			<kd value="1.0" />
+</gazebo>
+<gazebo reference="BackRightLink">
+          <selfCollide>false</selfCollide>
+			<mu1>4</mu1>
+    <mu2>4</mu2>
+	<kp value="10000000.0" />
+			<kd value="1.0" />
+</gazebo>
+<gazebo reference="BackLeftLink">
+          <selfCollide>false</selfCollide>
+			<mu1>4</mu1>
+    <mu2>4</mu2>
+	<kp value="10000000.0" />
+			<kd value="1.0" />
+</gazebo>
+
+<gazebo reference="base_link">
+          <selfCollide>false</selfCollide>
+			<mu1>4</mu1>
+    <mu2>4</mu2>
+	<kp value="10000000.0" />
+			<kd value="1.0" />
+</gazebo>
+
+<gazebo reference="body">
+          <selfCollide>false</selfCollide>
+			<mu1>4</mu1>
+    <mu2>4</mu2>
+	<kp value="10000000.0" />
+			<kd value="1.0" />
+</gazebo>
+<gazebo reference="kinect_link">
+          <selfCollide>false</selfCollide>
+			<mu1>4</mu1>
+    <mu2>4</mu2>
+	<kp value="10000000.0" />
+			<kd value="1.0" />
+</gazebo>
+<gazebo reference="rack_link">
+          <selfCollide>false</selfCollide>
+			<mu1>4</mu1>
+    <mu2>4</mu2>
+	<kp value="10000000.0" />
+			<kd value="1.0" />
+</gazebo>
+<transmission name="BackLeft_trans" type="SimpleTransmission">
+			<type>transmission_interface/SimpleTransmission</type>
+			<actuator name="BackLeft_wheel_motor">
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+			<joint name="BackLeftJoint1">
+				<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+			</joint>
+		</transmission>
+<transmission name="BackLeft_trans2" type="SimpleTransmission">
+			<type>transmission_interface/SimpleTransmission</type>
+			<actuator name="BackLeft_wheel_motor2">
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+			<joint name="BackLeftJoint2">
+				<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+			</joint>
+		</transmission>
+<transmission name="BackRight_trans" type="SimpleTransmission">
+			<type>transmission_interface/SimpleTransmission</type>
+			<actuator name="BackRight_wheel_motor">
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+			<joint name="BackRightJoint1">
+				<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+			</joint>
+		</transmission>
+<transmission name="BackRight_trans2" type="SimpleTransmission">
+			<type>transmission_interface/SimpleTransmission</type>
+			<actuator name="BackRight_wheel_motor2">
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+			<joint name="BackRightJoint2">
+				<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+			</joint>
+		</transmission>
+<transmission name="FrontRight_trans" type="SimpleTransmission">
+			<type>transmission_interface/SimpleTransmission</type>
+			<actuator name="FrontRight_wheel_motor">
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+			<joint name="FrontRightJoint1">
+				<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+			</joint>
+		</transmission>
+<transmission name="FrontRight_trans2" type="SimpleTransmission">
+			<type>transmission_interface/SimpleTransmission</type>
+			<actuator name="FrontRight_wheel_motor2">
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+			<joint name="FrontRightJoint2">
+				<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+			</joint>
+		</transmission>
+<transmission name="FrontLeft_trans" type="SimpleTransmission">
+			<type>transmission_interface/SimpleTransmission</type>
+			<actuator name="FrontLeft_wheel_motor">
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+			<joint name="FrontLeftJoint1">
+				<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+			</joint>
+		</transmission>
+<transmission name="FrontLeft_trans2" type="SimpleTransmission">
+			<type>transmission_interface/SimpleTransmission</type>
+			<actuator name="FrontLeft_wheel_motor2">
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+			<joint name="FrontLeftJoint2">
+				<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+			</joint>
+		</transmission>
+
+ <transmission name="tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="FrontLeftJoint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+<transmission name="tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="FrontRightJoint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+<transmission name="tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="BackLeftJoint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+<transmission name="tran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="BackRightJoint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran5">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="kinect_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor5">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+<gazebo reference="kinect_link">
+    <material>Gazebo/FlatBlack</material>
+    <sensor type="depth" name="camera">
+        <always_on>true</always_on>
+        <update_rate>20.0</update_rate>
+        <camera>
+          <horizontal_fov>${60.0*3.14159/180.0}</horizontal_fov>
+          <image>
+            <format>B8G8R8</format>
+            <width>640</width>
+            <height>480</height>
+          </image>
+          <clip>
+            <near>0.05</near>
+            <far>16</far>
+          </clip>
+        </camera>
+       <plugin name="kinect_camera_controller" filename="libgazebo_ros_openni_kinect.so">
+          <cameraName>camera</cameraName>
+          <alwaysOn>true</alwaysOn>
+          <updateRate>10</updateRate>
+          <imageTopicName>rgb/image_raw</imageTopicName>
+          <depthImageTopicName>depth/image_raw</depthImageTopicName>
+          <pointCloudTopicName>depth/points</pointCloudTopicName>
+          <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
+          <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>
+          <frameName>camera_depth_optical_frame</frameName>
+          <baseline>0.1</baseline>
+          <distortion_k1>0.0</distortion_k1>
+          <distortion_k2>0.0</distortion_k2>
+          <distortion_k3>0.0</distortion_k3>
+          <distortion_t1>0.0</distortion_t1>
+          <distortion_t2>0.0</distortion_t2>
+          <pointCloudCutoff>0.4</pointCloudCutoff>
+        </plugin>
+      </sensor>
+  </gazebo>
+
+  <!-- stereo camera -->
+    <gazebo reference="kinect_link">
+      <sensor type="multicamera" name="stereocamera">
+        <always_on>true</always_on>
+        <update_rate>20</update_rate>
+        <visualize>false</visualize>
+        <camera name="left">
+          <pose>0 0.10 0 0 0 0</pose>
+          <horizontal_fov>1.5</horizontal_fov>
+          <image>
+            <width>848</width>
+            <height>480</height>
+          </image>
+          <clip>
+            <near>0.01</near>
+            <far>100</far>
+          </clip>
+        </camera>
+        <camera name="right">
+          <pose>0 -0.10 0 0 0 0</pose>
+          <horizontal_fov>1.5</horizontal_fov>
+          <image>
+            <width>848</width>
+            <height>480</height>
+          </image>
+          <clip>
+            <near>0.01</near>
+            <far>100</far>
+          </clip>
+        </camera>
+        <plugin name="stereo_camera_controller" filename="libgazebo_ros_multicamera.so">
+          <cameraName>stereocamera</cameraName>
+          <alwaysOn>true</alwaysOn>
+          <updateRate>20</updateRate>
+          <cameraName>stereocamera</cameraName>
+          <imageTopicName>image_raw</imageTopicName>
+          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+          <frameName>camera_link_optical</frameName>
+          <baseline>0.20</baseline>
+          <distortion_k1>0.0</distortion_k1>
+          <distortion_k2>0.0</distortion_k2>
+          <distortion_k3>0.0</distortion_k3>
+          <distortion_t1>0.0</distortion_t1>
+          <distortion_t2>0.0</distortion_t2>
+        </plugin>
+      </sensor>
+    </gazebo>
+
+  <!-- imu -->
+    <!--gazebo reference="imu_link">
+        <gravity>true</gravity>
+        <sensor name="imu" type="imu">
+            <always_on>true</always_on>
+            <update_rate>100</update_rate>
+            <topic>/imu</topic>
+            <plugin name="imu_plugin" filename="libgazebo_ros_imu_sensor.so" >
+                <topicName>/imu</topicName>
+                <bodyName>imu_link</bodyName>
+                <updateRateHZ>100</updateRateHZ>
+                <gaussianNoise>0.01</gaussianNoise>
+                <xyzOffset>0 0 0</xyzOffset>
+                <rpyOffset>0 0 0</rpyOffset>
+                <frameName>imu_link</frameName>
+            </plugin>
+            <pose>0 0 0 0 0 0</pose>
+        </sensor>
+    </gazebo-->
+
+
+  <gazebo reference="imu_link">
+    <gravity>true</gravity>
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <topic>__default_topic__</topic>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>imu</topicName>
+        <bodyName>imu_link</bodyName>
+        <updateRateHZ>100.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>imu_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+
+  <gazebo>
+	  <plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">
+	    <alwaysOn>true</alwaysOn>
+	    <updateRate>50.0</updateRate>
+	    <bodyName>base_footprint</bodyName>
+	    <topicName>ground_truth/robot_state</topicName>
+	    <gaussianNoise>0.00</gaussianNoise>
+	    <frameName>world</frameName>
+	    <xyzOffsets>0 0 0</xyzOffsets>
+	    <rpyOffsets>0 0 0</rpyOffsets>
+	  </plugin>
+	</gazebo>
+
+<xacro:include filename="$(find iqr_4b_description)/urdf/vlp16.xacro"/>
+  <xacro:vlp16 package="iqr_4b_description" parent="laser_link">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </xacro:vlp16>
+
+</robot>

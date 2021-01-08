@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="vlp16">
+
+  <xacro:macro name="vlp16" params="package parent *origin">
+    <xacro:property name="prefix" value="vlp16"/>
+	 <!-- VLP-16 -->
+	  <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
+	  <VLP-16 parent="${parent}" name="velodyne" topic="/velodyne_points" hz="10" samples="1024" gpu="false" lasers="16" max_range="100">
+	    <xacro:insert_block name="origin" />
+	  </VLP-16>
+
+  </xacro:macro>
+
+</robot>

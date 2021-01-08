@@ -1,0 +1,74 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"chassis_link" [label="chassis_link"];
+"front_fender_link" [label="front_fender_link"];
+"front_left_wheel_link" [label="front_left_wheel_link"];
+"front_right_wheel_link" [label="front_right_wheel_link"];
+"imu_link" [label="imu_link"];
+"mid_mount" [label="mid_mount"];
+"front_mount" [label="front_mount"];
+"jackal_support_link" [label="jackal_support_link"];
+"arm_mount_link" [label="arm_mount_link"];
+"pan_tilt_base_link" [label="pan_tilt_base_link"];
+"pan_tilt_yaw_link" [label="pan_tilt_yaw_link"];
+"pan_tilt_pitch_link" [label="pan_tilt_pitch_link"];
+"pan_tilt_kinect_surface" [label="pan_tilt_kinect_surface"];
+"kinect_v2_link" [label="kinect_v2_link"];
+"kinect2_link" [label="kinect2_link"];
+"vlp16_link" [label="vlp16_link"];
+"velodyne" [label="velodyne"];
+"zed_link" [label="zed_link"];
+"rear_mount" [label="rear_mount"];
+"navsat_link" [label="navsat_link"];
+"rear_fender_link" [label="rear_fender_link"];
+"rear_left_wheel_link" [label="rear_left_wheel_link"];
+"rear_right_wheel_link" [label="rear_right_wheel_link"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "base_link_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"base_link_joint" -> "chassis_link"
+"chassis_link" -> "front_fender_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"front_fender_joint" -> "front_fender_link"
+"chassis_link" -> "front_left_wheel" [label="xyz: 0.131 0.187795 0.0345 \nrpy: 0 -0 0"]
+"front_left_wheel" -> "front_left_wheel_link"
+"chassis_link" -> "front_right_wheel" [label="xyz: 0.131 -0.187795 0.0345 \nrpy: 0 -0 0"]
+"front_right_wheel" -> "front_right_wheel_link"
+"chassis_link" -> "imu_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"imu_joint" -> "imu_link"
+"chassis_link" -> "mid_mount_joint" [label="xyz: 0 0 0.184 \nrpy: 0 -0 0"]
+"mid_mount_joint" -> "mid_mount"
+"mid_mount" -> "front_mount_joint" [label="xyz: 0.12 0 0 \nrpy: 0 -0 0"]
+"front_mount_joint" -> "front_mount"
+"mid_mount" -> "jackal_support_link_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"jackal_support_link_joint" -> "jackal_support_link"
+"jackal_support_link" -> "arm_mount_link_joint" [label="xyz: -0.046 0 0.07056 \nrpy: 1.5707 5.55112e-17 1.5707"]
+"arm_mount_link_joint" -> "arm_mount_link"
+"jackal_support_link" -> "pan_tilt_base_joint" [label="xyz: -0.0801 0 0.628 \nrpy: 0 -0 0"]
+"pan_tilt_base_joint" -> "pan_tilt_base_link"
+"pan_tilt_base_link" -> "pan_tilt_yaw_joint" [label="xyz: 0 0 0.05455 \nrpy: 0 -0 0"]
+"pan_tilt_yaw_joint" -> "pan_tilt_yaw_link"
+"pan_tilt_yaw_link" -> "pan_tilt_pitch_joint" [label="xyz: 0 0 0.057 \nrpy: 0 -0 0"]
+"pan_tilt_pitch_joint" -> "pan_tilt_pitch_link"
+"pan_tilt_pitch_link" -> "pan_tilt_kinect_surface_joint" [label="xyz: 0.001 0.0077 -0.022 \nrpy: 0 -0 0"]
+"pan_tilt_kinect_surface_joint" -> "pan_tilt_kinect_surface"
+"pan_tilt_kinect_surface" -> "kinect_v2_link_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"kinect_v2_link_joint" -> "kinect_v2_link"
+"kinect_v2_link" -> "kinect_v2_joint" [label="xyz: 0 0 0.045 \nrpy: -1.57089 2.65359e-06 -1.57089"]
+"kinect_v2_joint" -> "kinect2_link"
+"jackal_support_link" -> "vlp16_link_joint" [label="xyz: -0.005 0 0.528 \nrpy: 0 -0 0"]
+"vlp16_link_joint" -> "vlp16_link"
+"vlp16_link" -> "velodyne_link_joint" [label="xyz: 0 0 0.04 \nrpy: 0 -0 0"]
+"velodyne_link_joint" -> "velodyne"
+"jackal_support_link" -> "zed_link_joint" [label="xyz: 0.27193 0 -0.06943 \nrpy: 0 -0 0"]
+"zed_link_joint" -> "zed_link"
+"mid_mount" -> "rear_mount_joint" [label="xyz: -0.12 0 0 \nrpy: 0 -0 0"]
+"rear_mount_joint" -> "rear_mount"
+"chassis_link" -> "navsat_joint" [label="xyz: -0.18 0.126 0.1815 \nrpy: 0 -0 0"]
+"navsat_joint" -> "navsat_link"
+"chassis_link" -> "rear_fender_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 -3.14159"]
+"rear_fender_joint" -> "rear_fender_link"
+"chassis_link" -> "rear_left_wheel" [label="xyz: -0.131 0.187795 0.0345 \nrpy: 0 -0 0"]
+"rear_left_wheel" -> "rear_left_wheel_link"
+"chassis_link" -> "rear_right_wheel" [label="xyz: -0.131 -0.187795 0.0345 \nrpy: 0 -0 0"]
+"rear_right_wheel" -> "rear_right_wheel_link"
+}

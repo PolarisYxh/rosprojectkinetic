@@ -1,0 +1,170 @@
+solid Props_Props_0_Bqcd_12_0
+facet normal 1 0 0
+outer loop
+	vertex 0.09999999 25.1662 -23.2023
+	vertex 0.09999999 26.9471 -21.9958
+	vertex 0.09999999 21.7829 -17.8969
+endloop
+endfacet
+facet normal 1 0 0
+outer loop
+	vertex 0.09999999 26.9471 -21.9958
+	vertex 0.09999999 23.4181 -16.803
+	vertex 0.09999999 21.7829 -17.8969
+endloop
+endfacet
+facet normal 1 0 0
+outer loop
+	vertex 0.09999999 -25.0854 -23.2491
+	vertex 0.09999999 -21.8452 -18.032
+	vertex 0.09999999 -27.0889 -21.8755
+endloop
+endfacet
+facet normal 1 0 0
+outer loop
+	vertex 0.09999999 -21.8452 -18.032
+	vertex 0.09999999 -23.6417 -16.803
+	vertex 0.09999999 -27.0889 -21.8755
+endloop
+endfacet
+facet normal -1 0 0
+outer loop
+	vertex 0 23.4181 -16.803
+	vertex 0 26.9471 -21.9958
+	vertex 0 21.7829 -17.8969
+endloop
+endfacet
+facet normal -1 0 0
+outer loop
+	vertex 0 26.9471 -21.9958
+	vertex 0 25.1662 -23.2023
+	vertex 0 21.7829 -17.8969
+endloop
+endfacet
+facet normal -1 0 0
+outer loop
+	vertex 0 -23.6417 -16.803
+	vertex 0 -21.8452 -18.032
+	vertex 0 -27.0889 -21.8755
+endloop
+endfacet
+facet normal -1 0 0
+outer loop
+	vertex 0 -21.8452 -18.032
+	vertex 0 -25.0854 -23.2491
+	vertex 0 -27.0889 -21.8755
+endloop
+endfacet
+facet normal 0 0.5609381 -0.8278578
+outer loop
+	vertex 0 26.9471 -21.9958
+	vertex 0.09999999 26.9471 -21.9958
+	vertex 0 25.1662 -23.2023
+endloop
+endfacet
+facet normal 0 0.5608824 -0.8278955
+outer loop
+	vertex 0.09999999 26.9471 -21.9958
+	vertex 0.09999999 25.1662 -23.2023
+	vertex 0 25.1662 -23.2023
+endloop
+endfacet
+facet normal 0 -0.8431483 -0.537681
+outer loop
+	vertex 0 25.1662 -23.2023
+	vertex 0.09999999 25.1662 -23.2023
+	vertex 0 21.7829 -17.8969
+endloop
+endfacet
+facet normal 0 -0.8431483 -0.537681
+outer loop
+	vertex 0.09999999 25.1662 -23.2023
+	vertex 0.09999999 21.7829 -17.8969
+	vertex 0 21.7829 -17.8969
+endloop
+endfacet
+facet normal 0 -0.5560139 0.8311729
+outer loop
+	vertex 0 21.7829 -17.8969
+	vertex 0.09999999 21.7829 -17.8969
+	vertex 0 23.4181 -16.803
+endloop
+endfacet
+facet normal 0 -0.5559766 0.831198
+outer loop
+	vertex 0.09999999 21.7829 -17.8969
+	vertex 0.09999999 23.4181 -16.803
+	vertex 0 23.4181 -16.803
+endloop
+endfacet
+facet normal 0 0.8270082 0.5621898
+outer loop
+	vertex 0 23.4181 -16.803
+	vertex 0.09999999 23.4181 -16.803
+	vertex 0 26.9471 -21.9958
+endloop
+endfacet
+facet normal 0 0.827015 0.5621798
+outer loop
+	vertex 0.09999999 23.4181 -16.803
+	vertex 0.09999999 26.9471 -21.9958
+	vertex 0 26.9471 -21.9958
+endloop
+endfacet
+facet normal 0 -0.5655268 -0.8247299
+outer loop
+	vertex 0 -25.0854 -23.2491
+	vertex 0.09999999 -25.0854 -23.2491
+	vertex 0 -27.0889 -21.8755
+endloop
+endfacet
+facet normal 0 -0.5655821 -0.824692
+outer loop
+	vertex 0.09999999 -25.0854 -23.2491
+	vertex 0.09999999 -27.0889 -21.8755
+	vertex 0 -27.0889 -21.8755
+endloop
+endfacet
+facet normal 0 -0.827015 0.5621798
+outer loop
+	vertex 0 -27.0889 -21.8755
+	vertex 0.09999999 -27.0889 -21.8755
+	vertex 0 -23.6417 -16.803
+endloop
+endfacet
+facet normal 0 -0.8270082 0.5621898
+outer loop
+	vertex 0.09999999 -27.0889 -21.8755
+	vertex 0.09999999 -23.6417 -16.803
+	vertex 0 -23.6417 -16.803
+endloop
+endfacet
+facet normal 0 0.5646883 0.8253043
+outer loop
+	vertex 0 -23.6417 -16.803
+	vertex 0.09999999 -23.6417 -16.803
+	vertex 0 -21.8452 -18.032
+endloop
+endfacet
+facet normal 0 0.5646883 0.8253043
+outer loop
+	vertex 0.09999999 -23.6417 -16.803
+	vertex 0.09999999 -21.8452 -18.032
+	vertex 0 -21.8452 -18.032
+endloop
+endfacet
+facet normal 0 0.8495308 -0.5275391
+outer loop
+	vertex 0 -21.8452 -18.032
+	vertex 0.09999999 -21.8452 -18.032
+	vertex 0 -25.0854 -23.2491
+endloop
+endfacet
+facet normal 0 0.8495308 -0.5275391
+outer loop
+	vertex 0.09999999 -21.8452 -18.032
+	vertex 0.09999999 -25.0854 -23.2491
+	vertex 0 -25.0854 -23.2491
+endloop
+endfacet
+endsolid Props_Props_0_Bqcd_12_0
